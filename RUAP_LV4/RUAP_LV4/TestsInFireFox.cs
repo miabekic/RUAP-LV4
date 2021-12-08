@@ -1,16 +1,16 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Firefox;
 
 namespace RUAP_LV4
 {
     [TestFixture]
-    public class DemoOpenChart
+    class TestsInFireFox
     {
         private IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -20,12 +20,12 @@ namespace RUAP_LV4
         [SetUp]
         public void SetupTest()
         {
-            ChromeOptions options = new ChromeOptions();
+            FirefoxOptions options = new FirefoxOptions();
             options.AddArguments("--start-maximized");
-            driver = new ChromeDriver(options);
+            driver = new FirefoxDriver(options);
             baseURL = "https://www.google.com/";
             verificationErrors = new StringBuilder();
-            
+           
         }
 
         [TearDown]
@@ -185,3 +185,4 @@ namespace RUAP_LV4
         }
     }
 }
+
